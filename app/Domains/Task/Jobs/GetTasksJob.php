@@ -3,6 +3,8 @@
 namespace App\Domains\Task\Jobs;
 
 use Lucid\Units\Job;
+use App\Data\Models\Task;
+use Inertia\Inertia;
 
 class GetTasksJob extends Job
 {
@@ -15,10 +17,17 @@ class GetTasksJob extends Job
     {
         //
     }
+    /**
+     * Execute the job.
+     *
+     */
+    public function handle()
+    {
+        //
+        $tasks = Task::get();
 
-    $tasks = Task::get();
-
-    return Inertia::render('Tasks/TaskList', [
-        'tasks' => $tasks
-    ]);
+        return Inertia::render('Tasks/TaskList', [
+            'tasks' => $tasks
+        ]);
+    }
 }

@@ -85,7 +85,7 @@
           Create Task</Link
         >
         <!-- Task list table -->
-        <div class="flex flex-col" v-if="tasks.length > 1">
+        <div class="flex flex-col">
           <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div
               class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8"
@@ -189,7 +189,6 @@
           Oops! it seems you dont have any task. Click the create task button to
           create a new task
         </p>
-        <p>{{tasks.length}}</p>
       </div>
     </div>
   </div>
