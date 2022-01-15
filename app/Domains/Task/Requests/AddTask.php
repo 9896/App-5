@@ -13,7 +13,7 @@ class AddTask extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,6 +25,8 @@ class AddTask extends FormRequest
     {
         return [
             //
+            'title' => ['required'],
+            'description' => ['required']
         ];
     }
 }

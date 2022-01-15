@@ -16,13 +16,9 @@ class GetTasksJob extends Job
         //
     }
 
-    /**
-     * Execute the job.
-     *
-     * @return void
-     */
-    public function handle()
-    {
-        //
-    }
+    $tasks = Task::get();
+
+    return Inertia::render('Tasks/TaskList', [
+        'tasks' => $tasks
+    ]);
 }
