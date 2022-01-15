@@ -13,7 +13,7 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Tasks/Create');
-});
+// Route::get('/', function () {
+//     return Inertia::render('Tasks/Create');
+// });
 
