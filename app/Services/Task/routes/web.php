@@ -1,5 +1,7 @@
 <?php
 
+use App\Services\Task\Http\Controllers\TaskController;
+use Inertia\Inertia;
 /*
 |--------------------------------------------------------------------------
 | Service - Web Routes
@@ -11,13 +13,12 @@
 |
 */
 
-Route::group(['prefix' => 'task'], function() {
-
-    // The controllers live in src/Services/Task/Http/Controllers
-    // Route::get('/', 'UserController@index');
-
-    Route::get('/', function() {
-        return view('task::welcome');
-    });
-
+Route::get('/', function () {
+    return Inertia::render('Tasks/Create');
 });
+
+
+Route::get('/task-list', [TaskController::class, 'get'])->name('tasklist');
+
+Route::post('/add-task', [TaskController::class, 'add']);
+
